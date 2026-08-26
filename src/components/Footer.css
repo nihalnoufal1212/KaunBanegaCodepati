@@ -1,0 +1,20 @@
+.site-footer {
+  position: relative;
+  z-index: 1;
+  border-top: 1px solid rgba(217, 173, 75, 0.15);
+  padding: 1.8rem 0;
+  text-align: center;
+}
+
+.site-footer__brand {
+  font-family: var(--font-display);
+  font-weight: 700;
+  font-size: 1rem;
+  letter-spacing: 0.1em;
+  margin-bottom: 0.3rem;
+}
+
+.site-footer__org {
+  font-size: 0.78rem;
+  color: var(--ink-500);
+}

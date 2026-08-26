@@ -1,0 +1,28 @@
+.lifelines {
+  position: relative;
+  z-index: 1;
+  padding: 0 0 clamp(3rem, 6vw, 5rem);
+}
+
+.lifelines__heading {
+  text-align: center;
+  margin-bottom: 1.6rem;
+  font-size: 0.85rem;
+  letter-spacing: 0.25em;
+}
+
+.lifelines__grid {
+  display: flex;
+  gap: 1.4rem;
+  flex-wrap: wrap;
+  padding: 1.6rem;
+  border-radius: var(--radius-lg);
+  border: var(--border-gold);
+  background: rgba(6, 11, 26, 0.4);
+}
+
+@media (max-width: 780px) {
+  .lifelines__grid {
+    flex-direction: column;
+  }
+}

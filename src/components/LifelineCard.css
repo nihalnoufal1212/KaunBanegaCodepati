@@ -1,0 +1,61 @@
+.lifeline-card {
+  flex: 1;
+  min-width: 220px;
+  padding: 1.6rem 1.4rem;
+  border-radius: var(--radius-md);
+  border: var(--border-gold);
+  background: linear-gradient(180deg, rgba(217, 173, 75, 0.05), rgba(6, 11, 26, 0.6));
+  text-align: center;
+  transition: transform var(--dur-fast) var(--ease-out), box-shadow var(--dur-fast) var(--ease-out), border-color var(--dur-fast) var(--ease-out);
+}
+
+.lifeline-card:hover {
+  transform: translateY(-4px);
+  border-color: rgba(240, 195, 90, 0.75);
+  box-shadow: 0 14px 40px -14px var(--gold-glow);
+}
+
+.lifeline-card__icon {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 64px;
+  height: 64px;
+  border-radius: 50%;
+  border: var(--border-gold-strong);
+  margin-bottom: 0.9rem;
+  color: var(--gold-300);
+  background: radial-gradient(circle at 40% 30%, rgba(240, 195, 90, 0.18), rgba(10, 19, 48, 0.75));
+  box-shadow: 0 0 22px -4px var(--gold-glow), inset 0 0 12px rgba(240, 195, 90, 0.15);
+}
+
+.lifeline-card__icon svg {
+  width: 26px;
+  height: 26px;
+}
+
+.lifeline-card__badge-text {
+  font-family: var(--font-display);
+  font-weight: 800;
+  font-size: 0.82rem;
+  letter-spacing: 0.01em;
+  color: var(--gold-100);
+}
+
+.lifeline-card__title {
+  font-size: 1rem;
+  margin-bottom: 0.6rem;
+}
+
+.lifeline-card__desc {
+  font-size: 0.88rem;
+  color: var(--ink-300);
+  line-height: 1.5;
+}
+
+.lifeline-card__points {
+  margin-top: 0.7rem;
+  font-family: var(--font-mono);
+  font-size: 0.78rem;
+  color: var(--blue-400);
+}

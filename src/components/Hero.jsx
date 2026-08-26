@@ -1,0 +1,54 @@
+import FeatureCard from "./FeatureCard";
+import { BoltIcon, TrophyIcon, UsersIcon, BrainIcon, GiftIcon, CrownIcon, TargetIcon } from "./Icons";
+import emblem from "../assets/codepathi-emblem.webp";
+
+const LEFT_FEATURES = [
+  { icon: <BoltIcon />, title: "THINK FAST", subtitle: "Act Smart" },
+  { icon: <TrophyIcon />, title: "BE THE CHAMPION", subtitle: "Rise Above" },
+  { icon: <UsersIcon />, title: "COMPETE LIVE", subtitle: "Beat the Best" },
+  { icon: <BrainIcon />, title: "TEST YOUR KNOWLEDGE", subtitle: "Every Second Counts" },
+];
+
+const RIGHT_FEATURES = [
+  { icon: <GiftIcon />, title: "WIN EXCITING REWARDS", subtitle: "For You & Your Team" },
+  { icon: <CrownIcon />, title: "EARN GLORY FOREVER", subtitle: "Make Your Chapter Proud" },
+  { icon: <TargetIcon />, title: "ONE ANSWER CAN CHANGE EVERYTHING", subtitle: "Are You Ready?" },
+];
+
+export default function Hero() {
+  return (
+    <section className="hero">
+      <div className="hero__rings" aria-hidden="true">
+        <span className="hero__ring hero__ring--1" />
+        <span className="hero__ring hero__ring--2" />
+        <span className="hero__ring hero__ring--3" />
+        <span className="hero__spotlight" />
+      </div>
+
+      <div className="container hero__grid">
+        <div className="hero__column hero__column--left">
+          {LEFT_FEATURES.map((f) => (
+            <FeatureCard key={f.title} side="left" {...f} />
+          ))}
+        </div>
+
+        <div className="hero__centerpiece">
+          <div className="hero__emblem-wrap">
+            <img
+              src={emblem}
+              alt="Kaun Banega Codepathi emblem — a gold and navy circular quiz badge"
+              className="hero__emblem"
+            />
+          </div>
+          <p className="hero__tagline eyebrow">KNOWLEDGE &bull; STRATEGY &bull; VICTORY</p>
+        </div>
+
+        <div className="hero__column hero__column--right">
+          {RIGHT_FEATURES.map((f) => (
+            <FeatureCard key={f.title} side="right" {...f} />
+          ))}
+        </div>
+      </div>
+    </section>
+  );
+}

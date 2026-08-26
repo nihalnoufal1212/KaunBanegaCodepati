@@ -1,0 +1,452 @@
+/* =========================================================
+   KAUN BANEGA CODEPATHI — HOW TO PLAY
+   Final isolated styling
+   ========================================================= */
+
+.kbcp-how,
+.kbcp-how * {
+  box-sizing: border-box;
+}
+
+.kbcp-how {
+  width: 100%;
+  padding: 90px 0 100px;
+
+  color: rgba(235, 239, 250, 0.9);
+
+  font-style: normal;
+  text-align: left;
+}
+
+.kbcp-how p,
+.kbcp-how h2,
+.kbcp-how h3,
+.kbcp-how h4,
+.kbcp-how span,
+.kbcp-how strong {
+  font-style: normal;
+}
+
+.kbcp-how__header {
+  max-width: 700px;
+  margin: 0 auto 45px;
+  text-align: center;
+}
+
+.kbcp-how__eyebrow {
+  display: block;
+  margin-bottom: 8px;
+
+  color: rgba(216, 173, 74, 0.7);
+
+  font-size: 0.65rem;
+  font-weight: 700;
+  letter-spacing: 0.2em;
+}
+
+.kbcp-how__header h2 {
+  margin: 0 0 12px;
+
+  color: #dcb34f;
+
+  font-size: clamp(2rem, 4vw, 3rem);
+  font-weight: 600;
+  line-height: 1.15;
+  letter-spacing: 0.08em;
+}
+
+.kbcp-how__header p {
+  margin: 0;
+
+  color: rgba(190, 200, 224, 0.65);
+
+  font-size: 0.95rem;
+  line-height: 1.5;
+}
+
+
+/* =========================================================
+   ROUND CARDS
+   ========================================================= */
+
+.kbcp-round {
+  width: 100%;
+  margin-bottom: 22px;
+  padding: 30px;
+
+  border: 1px solid rgba(212, 170, 70, 0.3);
+  border-radius: 18px;
+
+  background:
+    radial-gradient(
+      circle at top right,
+      rgba(50, 75, 150, 0.12),
+      transparent 40%
+    ),
+    rgba(8, 16, 42, 0.95);
+
+  font-style: normal;
+}
+
+.kbcp-round__heading {
+  display: flex;
+  align-items: center;
+  gap: 16px;
+
+  margin-bottom: 25px;
+}
+
+.kbcp-round__number {
+  width: 48px;
+  height: 48px;
+  flex-shrink: 0;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  border: 1px solid rgba(212, 170, 70, 0.45);
+  border-radius: 50%;
+
+  color: #d8ad4a;
+
+  font-size: 0.75rem;
+  font-weight: 700;
+}
+
+.kbcp-round__eyebrow {
+  display: block;
+  margin-bottom: 4px;
+
+  color: rgba(216, 173, 74, 0.6);
+
+  font-size: 0.6rem;
+  font-weight: 700;
+  letter-spacing: 0.16em;
+}
+
+.kbcp-round__heading h3 {
+  margin: 0 0 3px;
+
+  color: rgba(239, 242, 252, 0.95);
+
+  font-size: 1.45rem;
+  font-weight: 600;
+  line-height: 1.25;
+}
+
+.kbcp-round__tagline {
+  color: rgba(180, 190, 216, 0.6);
+
+  font-size: 0.75rem;
+}
+
+.kbcp-round__content {
+  max-width: 900px;
+
+  color: rgba(195, 204, 227, 0.72);
+
+  font-size: 0.9rem;
+  line-height: 1.75;
+}
+
+.kbcp-round__content p {
+  margin: 0 0 14px;
+}
+
+.kbcp-round__content p:last-child {
+  margin-bottom: 0;
+}
+
+.kbcp-round__content strong {
+  color: #dfb64e;
+  font-weight: 600;
+}
+
+
+/* =========================================================
+   QUALIFICATION
+   ========================================================= */
+
+.kbcp-qualification {
+  display: flex;
+  align-items: center;
+  gap: 14px;
+
+  max-width: 650px;
+
+  margin-top: 24px;
+  padding: 16px 18px;
+
+  border: 1px solid rgba(212, 170, 70, 0.3);
+  border-radius: 13px;
+
+  background: rgba(212, 170, 70, 0.045);
+}
+
+.kbcp-qualification__icon {
+  width: 38px;
+  height: 38px;
+  flex-shrink: 0;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  border-radius: 9px;
+
+  color: #d8ad4a;
+
+  background: rgba(212, 170, 70, 0.08);
+}
+
+.kbcp-qualification div:last-child {
+  display: flex;
+  flex-direction: column;
+  gap: 3px;
+}
+
+.kbcp-qualification span {
+  color: rgba(216, 173, 74, 0.65);
+
+  font-size: 0.57rem;
+  font-weight: 700;
+  letter-spacing: 0.14em;
+}
+
+.kbcp-qualification strong {
+  color: #e2b951;
+
+  font-size: 1rem;
+}
+
+.kbcp-qualification p {
+  margin: 2px 0 0;
+
+  color: rgba(190, 200, 224, 0.62);
+
+  font-size: 0.72rem;
+  line-height: 1.5;
+}
+
+
+/* =========================================================
+   HOT SEAT STATS
+   ========================================================= */
+
+.kbcp-hotseat-stats {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 10px;
+
+  margin-top: 24px;
+}
+
+.kbcp-hotseat-stats > div {
+  padding: 14px;
+
+  border: 1px solid rgba(90, 115, 180, 0.18);
+  border-radius: 11px;
+
+  background: rgba(4, 10, 28, 0.5);
+
+  text-align: center;
+}
+
+.kbcp-hotseat-stats span {
+  display: block;
+  margin-bottom: 5px;
+
+  color: rgba(216, 173, 74, 0.6);
+
+  font-size: 0.55rem;
+  font-weight: 700;
+  letter-spacing: 0.13em;
+}
+
+.kbcp-hotseat-stats strong {
+  color: rgba(235, 239, 250, 0.92);
+
+  font-size: 1.1rem;
+  font-weight: 600;
+}
+
+
+/* =========================================================
+   SUBSECTIONS
+   ========================================================= */
+
+.kbcp-subsection {
+  margin-top: 55px;
+}
+
+.kbcp-subsection__header {
+  margin-bottom: 20px;
+}
+
+.kbcp-subsection__header > span {
+  display: block;
+  margin-bottom: 6px;
+
+  color: rgba(216, 173, 74, 0.65);
+
+  font-size: 0.62rem;
+  font-weight: 700;
+  letter-spacing: 0.17em;
+}
+
+.kbcp-subsection__header h3 {
+  margin: 0 0 6px;
+
+  color: rgba(239, 242, 252, 0.95);
+
+  font-size: 1.5rem;
+  font-weight: 600;
+}
+
+.kbcp-subsection__header p {
+  margin: 0;
+
+  color: rgba(190, 200, 224, 0.62);
+
+  font-size: 0.83rem;
+  line-height: 1.6;
+}
+
+
+/* =========================================================
+   LIFELINES
+   ========================================================= */
+
+.kbcp-lifelines {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 14px;
+}
+
+.kbcp-lifeline {
+  min-width: 0;
+
+  padding: 22px;
+
+  border: 1px solid rgba(90, 115, 180, 0.18);
+  border-radius: 14px;
+
+  background: rgba(8, 16, 42, 0.72);
+}
+
+.kbcp-lifeline__number {
+  color: rgba(216, 173, 74, 0.55);
+
+  font-size: 0.62rem;
+  font-weight: 700;
+}
+
+.kbcp-lifeline h4 {
+  margin: 9px 0 9px;
+
+  color: rgba(235, 239, 250, 0.93);
+
+  font-size: 0.98rem;
+  font-weight: 600;
+  line-height: 1.3;
+}
+
+.kbcp-lifeline p {
+  margin: 0;
+
+  color: rgba(190, 200, 224, 0.65);
+
+  font-size: 0.78rem;
+  line-height: 1.65;
+}
+
+.kbcp-lifeline p strong {
+  color: #dcb34f;
+  font-weight: 600;
+}
+
+
+/* =========================================================
+   SIDE QUESTS
+   ========================================================= */
+
+.kbcp-sidequests {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 12px;
+}
+
+.kbcp-sidequest {
+  min-width: 0;
+
+  padding: 20px;
+
+  border: 1px solid rgba(90, 115, 180, 0.18);
+  border-radius: 14px;
+
+  background: rgba(8, 16, 42, 0.65);
+}
+
+.kbcp-sidequest__number {
+  color: rgba(216, 173, 74, 0.55);
+
+  font-size: 0.62rem;
+  font-weight: 700;
+}
+
+.kbcp-sidequest h4 {
+  margin: 10px 0 8px;
+
+  color: rgba(235, 239, 250, 0.92);
+
+  font-size: 0.9rem;
+  font-weight: 600;
+  line-height: 1.35;
+}
+
+.kbcp-sidequest p {
+  margin: 0;
+
+  color: rgba(190, 200, 224, 0.62);
+
+  font-size: 0.75rem;
+  line-height: 1.6;
+}
+
+
+/* =========================================================
+   RESPONSIVE
+   ========================================================= */
+
+@media (max-width: 900px) {
+  .kbcp-lifelines {
+    grid-template-columns: 1fr;
+  }
+
+  .kbcp-sidequests {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+@media (max-width: 650px) {
+  .kbcp-how {
+    padding: 60px 0 70px;
+  }
+
+  .kbcp-round {
+    padding: 22px;
+  }
+
+  .kbcp-hotseat-stats {
+    grid-template-columns: 1fr;
+  }
+
+  .kbcp-sidequests {
+    grid-template-columns: 1fr;
+  }
+
+  .kbcp-qualification {
+    align-items: flex-start;
+  }
+}

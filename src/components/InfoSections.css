@@ -1,0 +1,284 @@
+.info-sections {
+  position: relative;
+  z-index: 1;
+  padding: 0 0 clamp(3rem, 6vw, 5rem);
+}
+
+.info-sections__grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+  gap: 1.4rem;
+}
+
+.info-sections__card {
+  padding: 1.8rem 1.6rem;
+  scroll-margin-top: 6.5rem;
+}
+
+.info-sections__title {
+  font-size: 1.1rem;
+  margin-bottom: 0.7rem;
+  letter-spacing: 0.08em;
+}
+
+.info-sections__body {
+  color: var(--ink-500);
+  font-size: 0.9rem;
+  line-height: 1.6;
+  font-style: italic;
+}
+/* =========================================================
+   CODEPATHI — ABOUT / SCHEDULE / CONTACT
+   ========================================================= */
+
+.kbcp-info,
+.kbcp-info * {
+  box-sizing: border-box;
+}
+
+.kbcp-info {
+  width: 100%;
+  padding: 0 0 100px;
+
+  font-style: normal;
+}
+
+.kbcp-info__grid {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: 22px;
+}
+
+.kbcp-info-card {
+  min-width: 0;
+  padding: 26px;
+
+  border: 1px solid rgba(212, 170, 70, 0.3);
+  border-radius: 17px;
+
+  background: rgba(8, 16, 42, 0.94);
+
+  font-style: normal;
+}
+
+.kbcp-info-card__heading {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+
+  margin-bottom: 22px;
+}
+
+.kbcp-info-card__heading span {
+  width: 34px;
+  height: 34px;
+  flex-shrink: 0;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  border: 1px solid rgba(212, 170, 70, 0.4);
+  border-radius: 50%;
+
+  color: #d8ad4a;
+
+  font-size: 0.6rem;
+  font-weight: 700;
+}
+
+.kbcp-info-card__heading h2 {
+  margin: 0;
+
+  color: #dcb34f;
+
+  font-size: 1.35rem;
+  font-weight: 600;
+  line-height: 1.2;
+  letter-spacing: 0.08em;
+}
+
+
+/* About */
+
+.kbcp-about__main {
+  margin: 0 0 15px;
+
+  color: rgba(235, 239, 250, 0.92);
+
+  font-size: 0.92rem;
+  line-height: 1.7;
+}
+
+.kbcp-about__main strong {
+  color: #dfb64e;
+}
+
+.kbcp-about__text {
+  margin: 0;
+
+  color: rgba(190, 200, 224, 0.65);
+
+  font-size: 0.82rem;
+  line-height: 1.7;
+}
+
+
+/* Schedule */
+
+.kbcp-info-details {
+  display: flex;
+  flex-direction: column;
+  gap: 9px;
+}
+
+.kbcp-info-details > div {
+  display: flex;
+  flex-direction: column;
+  gap: 3px;
+
+  padding: 11px 13px;
+
+  border: 1px solid rgba(90, 115, 180, 0.16);
+  border-radius: 9px;
+
+  background: rgba(4, 10, 28, 0.5);
+}
+
+.kbcp-info-details span {
+  color: rgba(216, 173, 74, 0.6);
+
+  font-size: 0.55rem;
+  font-weight: 700;
+  letter-spacing: 0.13em;
+}
+
+.kbcp-info-details strong {
+  color: rgba(230, 235, 247, 0.88);
+
+  font-size: 0.78rem;
+  font-weight: 500;
+  line-height: 1.4;
+}
+
+.kbcp-info-prize {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+
+  margin-top: 10px;
+  padding: 13px 15px;
+
+  border: 1px solid rgba(212, 170, 70, 0.35);
+  border-radius: 10px;
+
+  background: rgba(212, 170, 70, 0.05);
+}
+
+.kbcp-info-prize span {
+  color: rgba(216, 173, 74, 0.65);
+
+  font-size: 0.58rem;
+  font-weight: 700;
+  letter-spacing: 0.13em;
+}
+
+.kbcp-info-prize strong {
+  color: #e5bb55;
+
+  font-size: 1.25rem;
+}
+
+
+/* Contact */
+
+.kbcp-contact__intro {
+  margin: 0 0 15px;
+
+  color: rgba(190, 200, 224, 0.65);
+
+  font-size: 0.8rem;
+  line-height: 1.55;
+}
+
+.kbcp-contact-links {
+  display: flex;
+  flex-direction: column;
+  gap: 7px;
+}
+
+.kbcp-contact-links a {
+  display: grid;
+  grid-template-columns: 65px minmax(0, 1fr) 18px;
+  align-items: center;
+  gap: 8px;
+
+  padding: 10px 12px;
+
+  border: 1px solid rgba(90, 115, 180, 0.16);
+  border-radius: 9px;
+
+  background: rgba(4, 10, 28, 0.5);
+
+  text-decoration: none;
+
+  transition:
+    border-color 0.2s ease,
+    background 0.2s ease,
+    transform 0.2s ease;
+}
+
+.kbcp-contact-links a:hover {
+  transform: translateX(3px);
+
+  border-color: rgba(212, 170, 70, 0.4);
+  background: rgba(212, 170, 70, 0.05);
+}
+
+.kbcp-contact-links span {
+  color: rgba(216, 173, 74, 0.6);
+
+  font-size: 0.54rem;
+  font-weight: 700;
+  letter-spacing: 0.1em;
+}
+
+.kbcp-contact-links strong {
+  min-width: 0;
+
+  color: rgba(225, 231, 245, 0.85);
+
+  font-size: 0.72rem;
+  font-weight: 400;
+  line-height: 1.4;
+
+  overflow-wrap: anywhere;
+}
+
+.kbcp-contact-links b {
+  color: rgba(216, 173, 74, 0.65);
+
+  font-size: 0.8rem;
+  font-weight: 400;
+
+  text-align: right;
+}
+
+
+/* Responsive */
+
+@media (max-width: 900px) {
+  .kbcp-info__grid {
+    grid-template-columns: 1fr;
+  }
+}
+
+@media (max-width: 600px) {
+  .kbcp-info {
+    padding-bottom: 70px;
+  }
+
+  .kbcp-info-card {
+    padding: 22px;
+  }
+}
