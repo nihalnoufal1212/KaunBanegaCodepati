@@ -8,6 +8,7 @@ const NAV_LINKS = [
   { label: "HOW TO PLAY", href: "#how-to-play" },
   { label: "PRIZES", href: "#prizes" },
   { label: "SCHEDULE", href: "#schedule" },
+  { label: "FAQ", href: "#faq" },
   { label: "CONTACT", href: "#contact" },
 ];
 
@@ -19,29 +20,63 @@ export default function Navbar() {
   const handleNavClick = (label, href) => {
     setActive(label);
     setMenuOpen(false);
+
     const el = document.querySelector(href);
-    if (el) el.scrollIntoView({ behavior: "smooth", block: "start" });
+
+    if (el) {
+      el.scrollIntoView({
+        behavior: "smooth",
+        block: "start",
+      });
+    }
   };
 
   return (
     <header className="navbar" id="home">
       <div className="container navbar__inner">
+
+        {/* =====================================================
+            LEFT: ACM VIT-AP STUDENT CHAPTER
+            ===================================================== */}
         <div className="navbar__brand">
-          <img src={acmLogo} alt="ACM VIT-AP Student Chapter logo" className="navbar__logo" />
+          <img
+            src={acmLogo}
+            alt="ACM VIT-AP Student Chapter logo"
+            className="navbar__acm-logo"
+          />
+
           <div className="navbar__brand-text">
-            <span className="navbar__brand-line navbar__brand-line--primary">ACM VIT-AP</span>
-            <span className="navbar__brand-line">STUDENT CHAPTER</span>
-            <span className="navbar__brand-line navbar__brand-line--accent">VIT-AP UNIVERSITY</span>
+            <span className="navbar__brand-line navbar__brand-line--primary">
+              ACM VIT-AP
+            </span>
+
+            <span className="navbar__brand-line">
+              STUDENT CHAPTER
+            </span>
+
+            <span className="navbar__brand-line navbar__brand-line--accent">
+              VIT-AP UNIVERSITY
+            </span>
           </div>
         </div>
 
-        <nav className="navbar__nav navbar__nav--desktop" aria-label="Primary">
+        {/* =====================================================
+            CENTER: PRIMARY NAVIGATION
+            ===================================================== */}
+        <nav
+          className="navbar__nav navbar__nav--desktop"
+          aria-label="Primary"
+        >
           <ul>
             {NAV_LINKS.map((link) => (
               <li key={link.label}>
                 <a
                   href={link.href}
-                  className={`navbar__link ${active === link.label ? "navbar__link--active" : ""}`}
+                  className={`navbar__link ${
+                    active === link.label
+                      ? "navbar__link--active"
+                      : ""
+                  }`}
                   onClick={(e) => {
                     e.preventDefault();
                     handleNavClick(link.label, link.href);
@@ -54,25 +89,53 @@ export default function Navbar() {
           </ul>
         </nav>
 
-        <button
-          type="button"
-          className="btn-gold navbar__cta navbar__cta--desktop"
-          onClick={() => navigate("/join")}
-        >
-          <span className="navbar__cta-stack">
-            <span>JOIN THE QUIZ</span>
-            <span className="navbar__cta-sub">
-              LIVE ON <span className="gold-text">MENTIMETER</span>
-            </span>
-          </span>
-        </button>
+        {/* =====================================================
+            RIGHT: VIT-AP LOGOS + JOIN QUIZ
+            ===================================================== */}
+        <div className="navbar__partner-area">
 
+          <div className="navbar__partner-logos">
+            <img
+              src="/vit-ap-logo.png"
+              alt="VIT-AP University"
+              className="navbar__partner-logo navbar__partner-logo--vit"
+            />
+
+            <img
+              src="/vit-ap-tech-logo.png"
+              alt="VIT-AP Tech"
+              className="navbar__partner-logo navbar__partner-logo--tech"
+            />
+          </div>
+
+          <button
+            type="button"
+            className="btn-gold navbar__cta"
+            onClick={() => navigate("/join")}
+          >
+            <span className="navbar__cta-stack">
+              <span>JOIN THE QUIZ</span>
+
+              <span className="navbar__cta-sub">
+                LIVE ON{" "}
+                <span className="gold-text">
+                  MENTIMETER
+                </span>
+              </span>
+            </span>
+          </button>
+
+        </div>
+
+        {/* =====================================================
+            MOBILE MENU BUTTON
+            ===================================================== */}
         <button
           type="button"
           className="navbar__burger"
           aria-label={menuOpen ? "Close menu" : "Open menu"}
           aria-expanded={menuOpen}
-          onClick={() => setMenuOpen((o) => !o)}
+          onClick={() => setMenuOpen((open) => !open)}
         >
           <span />
           <span />
@@ -80,14 +143,24 @@ export default function Navbar() {
         </button>
       </div>
 
+      {/* =======================================================
+          MOBILE NAVIGATION
+          ======================================================= */}
       {menuOpen && (
-        <nav className="navbar__nav--mobile" aria-label="Mobile">
+        <nav
+          className="navbar__nav--mobile"
+          aria-label="Mobile"
+        >
           <ul>
             {NAV_LINKS.map((link) => (
               <li key={link.label}>
                 <a
                   href={link.href}
-                  className={`navbar__link ${active === link.label ? "navbar__link--active" : ""}`}
+                  className={`navbar__link ${
+                    active === link.label
+                      ? "navbar__link--active"
+                      : ""
+                  }`}
                   onClick={(e) => {
                     e.preventDefault();
                     handleNavClick(link.label, link.href);
@@ -98,12 +171,25 @@ export default function Navbar() {
               </li>
             ))}
           </ul>
+
           <button
             type="button"
-            className="btn-gold navbar__cta"
-            onClick={() => navigate("/join")}
+            className="btn-gold navbar__mobile-cta"
+            onClick={() => {
+              setMenuOpen(false);
+              navigate("/join");
+            }}
           >
-            JOIN THE QUIZ — LIVE ON MENTIMETER
+            <span className="navbar__cta-stack">
+              <span>JOIN THE QUIZ</span>
+
+              <span className="navbar__cta-sub">
+                LIVE ON{" "}
+                <span className="gold-text">
+                  MENTIMETER
+                </span>
+              </span>
+            </span>
           </button>
         </nav>
       )}

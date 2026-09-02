@@ -44,9 +44,14 @@ export default function InfoSections() {
             </div>
 
             <div>
-              <span>VENUE</span>
-              <strong>To Be Announced</strong>
-            </div>
+  <span>VENUE 1</span>
+  <strong>AB-1 G04</strong>
+</div>
+
+<div>
+  <span>VENUE 2</span>
+  <strong>CB G-13</strong>
+</div>
 
             <div>
               <span>ORGANIZED BY</span>

@@ -1,7 +1,7 @@
 .navbar {
   position: relative;
   z-index: 20;
-  padding: 1.5rem 0 1rem;
+  padding: 1.2rem 0 1rem;
   border-bottom: 1px solid rgba(217, 173, 75, 0.15);
 }
 
@@ -11,16 +11,21 @@
   gap: 1.5rem;
 }
 
+/* ============================================================
+   ACM VIT-AP STUDENT CHAPTER
+   ============================================================ */
+
 .navbar__brand {
   display: flex;
   align-items: center;
-  gap: 0.9rem;
+  gap: 0.85rem;
   flex-shrink: 0;
 }
 
-.navbar__logo {
-  width: 52px;
-  height: 52px;
+.navbar__acm-logo {
+  width: 54px;
+  height: 54px;
+  object-fit: contain;
   border-radius: 50%;
   filter: drop-shadow(0 0 10px rgba(90, 170, 255, 0.35));
 }
@@ -34,20 +39,25 @@
 .navbar__brand-line {
   font-family: var(--font-display);
   font-weight: 700;
-  font-size: 0.72rem;
-  letter-spacing: 0.14em;
+  font-size: 0.7rem;
+  letter-spacing: 0.13em;
   color: var(--ink-300);
+  white-space: nowrap;
 }
 
 .navbar__brand-line--primary {
-  font-size: 1.05rem;
+  font-size: 1rem;
   color: var(--ink-100);
 }
 
 .navbar__brand-line--accent {
   color: var(--blue-400);
-  font-size: 0.65rem;
+  font-size: 0.63rem;
 }
+
+/* ============================================================
+   PRIMARY NAVIGATION
+   ============================================================ */
 
 .navbar__nav--desktop {
   flex: 1;
@@ -57,16 +67,17 @@
 
 .navbar__nav--desktop ul {
   display: flex;
-  gap: clamp(0.9rem, 1.6vw, 1.9rem);
+  align-items: center;
+  gap: clamp(0.7rem, 1.35vw, 1.5rem);
 }
 
 .navbar__link {
   position: relative;
-  font-size: 0.82rem;
+  font-size: 0.78rem;
   font-weight: 600;
-  letter-spacing: 0.06em;
+  letter-spacing: 0.05em;
   color: var(--ink-300);
-  padding-bottom: 0.6rem;
+  padding-bottom: 0.55rem;
   transition: color var(--dur-fast) var(--ease-out);
   white-space: nowrap;
 }
@@ -86,28 +97,85 @@
   right: 0;
   bottom: 0;
   height: 2px;
-  background: linear-gradient(90deg, var(--gold-500), var(--gold-100));
+
+  background: linear-gradient(
+    90deg,
+    var(--gold-500),
+    var(--gold-100)
+  );
+
   box-shadow: 0 0 8px var(--gold-glow);
   border-radius: 2px;
+}
+
+/* ============================================================
+   RIGHT SIDE — VIT-AP LOGOS + JOIN QUIZ
+   ============================================================ */
+
+.navbar__partner-area {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 0.55rem;
+  flex-shrink: 0;
+}
+
+.navbar__partner-logos {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.55rem;
+  height: 42px;
+}
+
+.navbar__partner-logo {
+  object-fit: contain;
+  filter: drop-shadow(0 0 8px rgba(90, 170, 255, 0.2));
+}
+
+.navbar__partner-logo--vit {
+  width: 72px;
+  height: 38px;
+}
+
+.navbar__partner-logo--tech {
+  width: 82px;
+  height: 38px;
+}
+
+/* ============================================================
+   JOIN THE QUIZ
+   ============================================================ */
+
+.navbar__cta {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  min-width: 175px;
+  padding: 0.65rem 1.15rem;
+  white-space: nowrap;
 }
 
 .navbar__cta-stack {
   display: flex;
   flex-direction: column;
+  align-items: center;
   line-height: 1.2;
-  text-align: left;
+  text-align: center;
 }
 
 .navbar__cta-sub {
-  font-size: 0.68rem;
+  margin-top: 0.18rem;
+  font-size: 0.58rem;
   font-weight: 600;
   color: var(--ink-300);
   letter-spacing: 0.05em;
 }
 
-.navbar__cta--desktop {
-  flex-shrink: 0;
-}
+/* ============================================================
+   MOBILE BURGER
+   ============================================================ */
 
 .navbar__burger {
   display: none;
@@ -126,18 +194,64 @@
   border-radius: 2px;
 }
 
+/* ============================================================
+   MOBILE NAV
+   ============================================================ */
+
 .navbar__nav--mobile {
   display: none;
 }
 
+.navbar__mobile-cta {
+  width: 100%;
+}
+
+/* ============================================================
+   TABLET
+   ============================================================ */
+
+@media (max-width: 1120px) {
+  .navbar__nav--desktop ul {
+    gap: 0.8rem;
+  }
+
+  .navbar__link {
+    font-size: 0.72rem;
+  }
+
+  .navbar__brand-line--primary {
+    font-size: 0.9rem;
+  }
+
+  .navbar__brand-line {
+    font-size: 0.62rem;
+  }
+
+  .navbar__partner-logo--vit {
+    width: 62px;
+  }
+
+  .navbar__partner-logo--tech {
+    width: 72px;
+  }
+
+  .navbar__cta {
+    min-width: 155px;
+  }
+}
+
+/* ============================================================
+   MOBILE
+   ============================================================ */
+
 @media (max-width: 980px) {
-  .navbar__nav--desktop,
-  .navbar__cta--desktop {
+  .navbar__nav--desktop {
     display: none;
   }
 
   .navbar__burger {
     display: flex;
+    margin-left: auto;
   }
 
   .navbar__nav--mobile {
@@ -157,15 +271,56 @@
     display: block;
     padding: 0.4rem 0;
   }
-
-  .navbar__nav--mobile .btn-gold {
-    width: 100%;
-  }
 }
 
+/* ============================================================
+   SMALL MOBILE
+   ============================================================ */
+
 @media (max-width: 560px) {
+  .navbar {
+    padding-top: 0.8rem;
+  }
+
   .navbar__brand-text {
     display: none;
+  }
+
+  .navbar__acm-logo {
+    width: 48px;
+    height: 48px;
+  }
+
+  .navbar__partner-area {
+    gap: 0.4rem;
+  }
+
+  .navbar__partner-logos {
+    height: 32px;
+    gap: 0.35rem;
+  }
+
+  .navbar__partner-logo--vit {
+    width: 52px;
+    height: 30px;
+  }
+
+  .navbar__partner-logo--tech {
+    width: 62px;
+    height: 30px;
+  }
+
+  .navbar__cta {
+    min-width: 125px;
+    padding: 0.5rem 0.7rem;
+  }
+
+  .navbar__cta-stack > span:first-child {
+    font-size: 0.72rem;
+  }
+
+  .navbar__cta-sub {
+    font-size: 0.48rem;
   }
 }
 
@@ -174,6 +329,7 @@
     opacity: 0;
     transform: translateY(-8px);
   }
+
   to {
     opacity: 1;
     transform: translateY(0);
