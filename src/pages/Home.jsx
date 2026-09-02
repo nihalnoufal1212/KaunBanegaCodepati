@@ -15,7 +15,48 @@ export default function Home() {
 
       <main>
         <Hero />
-        <PrizePool />
+
+<section className="event-strip" aria-label="Event information">
+  <div className="container event-strip__inner">
+
+    <div className="event-strip__item">
+      <span className="event-strip__label">
+        DATE
+      </span>
+
+      <strong>
+        [DATE]
+      </strong>
+    </div>
+
+    <div className="event-strip__divider" />
+
+    <div className="event-strip__item">
+      <span className="event-strip__label">
+        TIME
+      </span>
+
+      <strong>
+        [TIME]
+      </strong>
+    </div>
+
+    <div className="event-strip__divider" />
+
+    <div className="event-strip__item">
+      <span className="event-strip__label">
+        VENUES
+      </span>
+
+      <strong>
+        AB-1 G04 &amp; CB G-13
+      </strong>
+    </div>
+
+  </div>
+</section>
+
+<PrizePool />
         <HowToPlay />
         <InfoSections />
       </main>

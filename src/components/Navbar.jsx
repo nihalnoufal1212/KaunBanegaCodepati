@@ -8,7 +8,6 @@ const NAV_LINKS = [
   { label: "HOW TO PLAY", href: "#how-to-play" },
   { label: "PRIZES", href: "#prizes" },
   { label: "SCHEDULE", href: "#schedule" },
-  { label: "FAQ", href: "#faq" },
   { label: "CONTACT", href: "#contact" },
 ];
 
@@ -35,9 +34,7 @@ export default function Navbar() {
     <header className="navbar" id="home">
       <div className="container navbar__inner">
 
-        {/* =====================================================
-            LEFT: ACM VIT-AP STUDENT CHAPTER
-            ===================================================== */}
+        {/* ACM VIT-AP Student Chapter */}
         <div className="navbar__brand">
           <img
             src={acmLogo}
@@ -60,9 +57,7 @@ export default function Navbar() {
           </div>
         </div>
 
-        {/* =====================================================
-            CENTER: PRIMARY NAVIGATION
-            ===================================================== */}
+        {/* Desktop Navigation */}
         <nav
           className="navbar__nav navbar__nav--desktop"
           aria-label="Primary"
@@ -89,9 +84,7 @@ export default function Navbar() {
           </ul>
         </nav>
 
-        {/* =====================================================
-            RIGHT: VIT-AP LOGOS + JOIN QUIZ
-            ===================================================== */}
+        {/* VIT Logos + Join Quiz */}
         <div className="navbar__partner-area">
 
           <div className="navbar__partner-logos">
@@ -127,9 +120,7 @@ export default function Navbar() {
 
         </div>
 
-        {/* =====================================================
-            MOBILE MENU BUTTON
-            ===================================================== */}
+        {/* Mobile menu */}
         <button
           type="button"
           className="navbar__burger"
@@ -143,9 +134,7 @@ export default function Navbar() {
         </button>
       </div>
 
-      {/* =======================================================
-          MOBILE NAVIGATION
-          ======================================================= */}
+      {/* Mobile navigation */}
       {menuOpen && (
         <nav
           className="navbar__nav--mobile"
@@ -180,19 +169,24 @@ export default function Navbar() {
               navigate("/join");
             }}
           >
-            <span className="navbar__cta-stack">
-              <span>JOIN THE QUIZ</span>
-
-              <span className="navbar__cta-sub">
-                LIVE ON{" "}
-                <span className="gold-text">
-                  MENTIMETER
-                </span>
-              </span>
-            </span>
+            JOIN THE QUIZ — LIVE ON MENTIMETER
           </button>
         </nav>
       )}
+      <button
+  type="button"
+  className="floating-join"
+  onClick={() => navigate("/join")}
+  aria-label="Join the live quiz"
+>
+  <span className="floating-join__main">
+    JOIN THE QUIZ
+  </span>
+
+  <span className="floating-join__sub">
+    LIVE ON MENTIMETER
+  </span>
+</button>
     </header>
   );
 }

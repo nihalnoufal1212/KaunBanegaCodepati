@@ -1,6 +1,5 @@
 import { useNavigate } from "react-router-dom";
 import Starfield from "../components/Starfield";
-import acmLogo from "../assets/acm-logo.png";
 import { MENTI_ROOMS } from "../config/mentiLinks";
 
 export default function JoinQuiz() {
@@ -11,6 +10,7 @@ export default function JoinQuiz() {
       <Starfield density={50} />
 
       <div className="container join-page__inner">
+
         <button
           type="button"
           className="join-page__back"
@@ -20,10 +20,21 @@ export default function JoinQuiz() {
         </button>
 
         <header className="join-page__header">
-          <img src={acmLogo} alt="ACM VIT-AP Student Chapter logo" className="join-page__logo" />
-          <p className="eyebrow">Kaun Banega Codepathi</p>
-          <h1 className="join-page__title gold-text">JOIN THE LIVE QUIZ</h1>
-          <p className="join-page__subtitle">Choose any available Mentimeter room below.</p>
+          <p className="eyebrow">
+            KAUN BANEGA CODEPATHI
+          </p>
+
+          <h1 className="join-page__title gold-text">
+            JOIN THE LIVE QUIZ
+          </h1>
+
+          <p className="join-page__subtitle">
+            Choose any available Mentimeter room below.
+          </p>
+
+          <p className="join-page__hint">
+            If one room is full, simply choose another room.
+          </p>
         </header>
 
         <div className="join-page__rooms">
@@ -33,14 +44,35 @@ export default function JoinQuiz() {
               href={room.url}
               className="join-room"
               aria-label={`${room.label} — ${room.cta}`}
+              target="_blank"
+              rel="noopener noreferrer"
             >
-              <span className="join-room__ring" aria-hidden="true">
-                {room.id}
+              <span
+                className="join-room__ring"
+                aria-hidden="true"
+              >
+                {String(room.id).padStart(2, "0")}
               </span>
-              <span className="join-room__label eyebrow">{room.label}</span>
-              <span className="join-room__cta gold-text">{room.cta}</span>
+
+              <span className="join-room__label eyebrow">
+                {room.label}
+              </span>
+
+              <span className="join-room__status">
+                LIVE ROOM
+              </span>
+
+              <span className="join-room__cta gold-text">
+                {room.cta} →
+              </span>
             </a>
           ))}
+        </div>
+
+        <div className="join-page__footer-note">
+          <span>4 ROOMS</span>
+          <span>•</span>
+          <span>ONE LIVE QUIZ</span>
         </div>
       </div>
     </div>

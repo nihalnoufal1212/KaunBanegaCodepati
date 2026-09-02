@@ -1,20 +1,125 @@
+/* ============================================================
+   FOOTER
+   ============================================================ */
+
 .site-footer {
   position: relative;
   z-index: 1;
+
   border-top: 1px solid rgba(217, 173, 75, 0.15);
-  padding: 1.8rem 0;
+
+  padding: 3rem 0 2rem;
+
   text-align: center;
+
+  background:
+    linear-gradient(
+      180deg,
+      rgba(6, 11, 26, 0.2),
+      rgba(3, 7, 18, 0.55)
+    );
 }
+
+.site-footer__inner {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+/* Event name */
 
 .site-footer__brand {
   font-family: var(--font-display);
-  font-weight: 700;
-  font-size: 1rem;
-  letter-spacing: 0.1em;
-  margin-bottom: 0.3rem;
+  font-weight: 800;
+  font-size: clamp(1rem, 2vw, 1.25rem);
+  letter-spacing: 0.12em;
+  margin: 0;
 }
 
+/* Small tagline */
+
+.site-footer__tagline {
+  margin-top: 0.5rem;
+
+  font-family: var(--font-mono);
+  font-size: 0.58rem;
+  letter-spacing: 0.2em;
+
+  color: var(--gold-300);
+}
+
+/* Divider */
+
+.site-footer__divider {
+  width: min(280px, 60%);
+  height: 1px;
+
+  margin: 1.5rem 0;
+
+  background: linear-gradient(
+    90deg,
+    transparent,
+    rgba(217, 173, 75, 0.35),
+    transparent
+  );
+}
+
+/* Organization */
+
 .site-footer__org {
-  font-size: 0.78rem;
+  display: flex;
+  flex-direction: column;
+  gap: 0.25rem;
+
   color: var(--ink-500);
+
+  font-size: 0.72rem;
+}
+
+.site-footer__org strong {
+  color: var(--ink-300);
+
+  font-family: var(--font-display);
+  font-size: 0.78rem;
+  letter-spacing: 0.04em;
+}
+
+.site-footer__copyright {
+  margin-top: 1.5rem;
+
+  color: var(--ink-500);
+
+  font-size: 0.62rem;
+  letter-spacing: 0.03em;
+}
+
+/* ============================================================
+   MOBILE
+   ============================================================ */
+
+@media (max-width: 560px) {
+  .site-footer {
+    padding: 2.5rem 0 1.7rem;
+  }
+
+  .site-footer__brand {
+    font-size: 0.95rem;
+  }
+
+  .site-footer__tagline {
+    font-size: 0.5rem;
+    letter-spacing: 0.15em;
+  }
+
+  .site-footer__org {
+    font-size: 0.66rem;
+  }
+
+  .site-footer__org strong {
+    font-size: 0.7rem;
+  }
+
+  .site-footer__copyright {
+    font-size: 0.56rem;
+  }
 }
