@@ -189,8 +189,7 @@ export default function HowToPlay() {
             <p>
               The Hot Seat consists of a{" "}
               <strong>15-question ladder</strong>. As the player
-              progresses, the stakes increase and cash rewards begin
-              from <strong>Question 8</strong>.
+              progresses, the stakes increase.
             </p>
 
             <p>
@@ -213,11 +212,6 @@ export default function HowToPlay() {
             <div>
               <span>QUESTIONS</span>
               <strong>15</strong>
-            </div>
-
-            <div>
-              <span>CASH STARTS</span>
-              <strong>Q8</strong>
             </div>
 
             <div>
