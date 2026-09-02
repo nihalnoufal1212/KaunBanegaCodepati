@@ -31,6 +31,7 @@ export default function Navbar() {
   };
 
   return (
+  <>
     <header className="navbar" id="home">
       <div className="container navbar__inner">
 
@@ -173,7 +174,9 @@ export default function Navbar() {
           </button>
         </nav>
       )}
-      <button
+      
+    </header>
+    <button
   type="button"
   className="floating-join"
   onClick={() => navigate("/join")}
@@ -187,6 +190,6 @@ export default function Navbar() {
     LIVE ON MENTIMETER
   </span>
 </button>
-    </header>
-  );
+  </>
+);
 }
