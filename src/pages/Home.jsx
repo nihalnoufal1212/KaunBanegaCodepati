@@ -16,40 +16,28 @@ export default function Home() {
       <main>
         <Hero />
 
-<section className="event-strip" aria-label="Event information">
+<section className="event-strip" aria-label="Event schedule">
   <div className="container event-strip__inner">
 
-    <div className="event-strip__item">
+    <div className="event-strip__item event-strip__item--highlight">
       <span className="event-strip__label">
-        DATE
+        SEPT 11
       </span>
 
       <strong>
-        [DATE]
+        AB-1 — G 04
       </strong>
     </div>
 
     <div className="event-strip__divider" />
 
-    <div className="event-strip__item">
+    <div className="event-strip__item event-strip__item--highlight">
       <span className="event-strip__label">
-        TIME
+        SEPT 12
       </span>
 
       <strong>
-        [TIME]
-      </strong>
-    </div>
-
-    <div className="event-strip__divider" />
-
-    <div className="event-strip__item">
-      <span className="event-strip__label">
-        VENUES
-      </span>
-
-      <strong>
-        AB-1 G04 &amp; CB G-13
+        CB — G-13
       </strong>
     </div>
 

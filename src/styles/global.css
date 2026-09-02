@@ -423,3 +423,31 @@ ul {
     font-size: 0.42rem;
   }
 }
+/* ============================================================
+   EVENT SCHEDULE HIGHLIGHT
+   ============================================================ */
+
+.event-strip__item--highlight {
+  padding: 0.2rem 1rem;
+}
+
+.event-strip__item--highlight .event-strip__label {
+  font-size: 0.65rem;
+  font-weight: 700;
+  letter-spacing: 0.25em;
+}
+
+.event-strip__item--highlight strong {
+  font-size: 0.95rem;
+  letter-spacing: 0.04em;
+}
+
+@media (max-width: 640px) {
+  .event-strip__item--highlight {
+    padding: 0.2rem 0;
+  }
+
+  .event-strip__item--highlight strong {
+    font-size: 0.9rem;
+  }
+}

@@ -85,41 +85,24 @@ export default function Navbar() {
           </ul>
         </nav>
 
-        {/* VIT Logos + Join Quiz */}
-        <div className="navbar__partner-area">
+        {/* VIT Logos */}
+<div className="navbar__partner-area">
 
-          <div className="navbar__partner-logos">
-            <img
-              src="/vit-ap-logo.png"
-              alt="VIT-AP University"
-              className="navbar__partner-logo navbar__partner-logo--vit"
-            />
+  <div className="navbar__partner-logos">
+    <img
+      src="/vit-ap-logo.png"
+      alt="VIT-AP University"
+      className="navbar__partner-logo navbar__partner-logo--vit"
+    />
 
-            <img
-              src="/vit-ap-tech-logo.png"
-              alt="VIT-AP Tech"
-              className="navbar__partner-logo navbar__partner-logo--tech"
-            />
-          </div>
+    <img
+      src="/vit-ap-tech-logo.png"
+      alt="VIT-AP Tech"
+      className="navbar__partner-logo navbar__partner-logo--tech"
+    />
+  </div>
 
-          <button
-            type="button"
-            className="btn-gold navbar__cta"
-            onClick={() => navigate("/join")}
-          >
-            <span className="navbar__cta-stack">
-              <span>JOIN THE QUIZ</span>
-
-              <span className="navbar__cta-sub">
-                LIVE ON{" "}
-                <span className="gold-text">
-                  MENTIMETER
-                </span>
-              </span>
-            </span>
-          </button>
-
-        </div>
+</div>
 
         {/* Mobile menu */}
         <button

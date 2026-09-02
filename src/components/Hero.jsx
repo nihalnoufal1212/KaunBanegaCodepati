@@ -12,21 +12,9 @@ import {
 import emblem from "../assets/codepathi-emblem.webp";
 
 const LEFT_FEATURES = [
-  {
-    icon: <BoltIcon />,
-    title: "THINK FAST",
-    subtitle: "Act Smart",
-  },
-  {
-    icon: <TrophyIcon />,
-    title: "BE THE CHAMPION",
-    subtitle: "Rise Above",
-  },
-  {
-    icon: <UsersIcon />,
-    title: "COMPETE LIVE",
-    subtitle: "Beat the Best",
-  },
+  { icon: <BoltIcon />, title: "THINK FAST", subtitle: "Act Smart" },
+  { icon: <TrophyIcon />, title: "BE THE CHAMPION", subtitle: "Rise Above" },
+  { icon: <UsersIcon />, title: "COMPETE LIVE", subtitle: "Beat the Best" },
   {
     icon: <BrainIcon />,
     title: "TEST YOUR KNOWLEDGE",
@@ -65,6 +53,7 @@ export default function Hero() {
       </div>
 
       <div className="container hero__grid">
+        {/* LEFT FEATURES */}
         <div className="hero__column hero__column--left">
           {LEFT_FEATURES.map((f) => (
             <FeatureCard
@@ -75,35 +64,39 @@ export default function Hero() {
           ))}
         </div>
 
+        {/* CENTER */}
         <div className="hero__centerpiece">
           <div className="hero__emblem-wrap">
             <img
               src={emblem}
-              alt="Kaun Banega Codepathi emblem"
+              alt="Kaun Banega Codepathi emblem — a gold and navy circular quiz badge"
               className="hero__emblem"
             />
+          </div>
+
+          {/* MAIN JOIN QUIZ BUTTON */}
+          <div className="hero__cta-wrap">
+            <button
+              type="button"
+              className="hero__join-btn"
+              onClick={() => navigate("/join")}
+            >
+              <span className="hero__join-btn-main">
+                JOIN THE QUIZ →
+              </span>
+
+              <span className="hero__join-btn-sub">
+                LIVE ON MENTIMETER
+              </span>
+            </button>
           </div>
 
           <p className="hero__tagline eyebrow">
             KNOWLEDGE &bull; STRATEGY &bull; VICTORY
           </p>
-
-          {/* Main Hero CTA */}
-          <button
-            type="button"
-            className="btn-gold hero__cta"
-            onClick={() => navigate("/join")}
-          >
-            <span className="hero__cta-main">
-              JOIN THE LIVE QUIZ
-            </span>
-
-            <span className="hero__cta-sub">
-              CHOOSE YOUR MENTIMETER ROOM
-            </span>
-          </button>
         </div>
 
+        {/* RIGHT FEATURES */}
         <div className="hero__column hero__column--right">
           {RIGHT_FEATURES.map((f) => (
             <FeatureCard

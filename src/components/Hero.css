@@ -200,3 +200,100 @@
     font-size: 0.52rem;
   }
 }
+/* ============================================================
+   HERO PRIMARY JOIN QUIZ CTA
+   ============================================================ */
+
+.hero__cta-wrap {
+  display: flex;
+  justify-content: center;
+  margin-top: 0.2rem;
+}
+
+.hero__join-btn {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+
+  min-width: 250px;
+  padding: 1rem 2rem;
+
+  border: 1px solid var(--gold-300);
+  border-radius: 999px;
+
+  background:
+    linear-gradient(
+      180deg,
+      rgba(255, 244, 214, 0.16),
+      rgba(80, 60, 15, 0.82)
+    );
+
+  color: var(--gold-100);
+
+  box-shadow:
+    0 8px 30px rgba(0, 0, 0, 0.3),
+    0 0 28px -8px var(--gold-glow);
+
+  backdrop-filter: blur(8px);
+
+  cursor: pointer;
+
+  transition:
+    transform var(--dur-fast) var(--ease-out),
+    box-shadow var(--dur-fast) var(--ease-out),
+    background var(--dur-fast) var(--ease-out);
+}
+
+.hero__join-btn:hover,
+.hero__join-btn:focus-visible {
+  transform: translateY(-3px);
+
+  box-shadow:
+    0 12px 40px rgba(0, 0, 0, 0.35),
+    0 0 38px -6px var(--gold-glow);
+
+  background:
+    linear-gradient(
+      180deg,
+      rgba(255, 244, 214, 0.22),
+      rgba(90, 68, 18, 0.95)
+    );
+}
+
+.hero__join-btn:active {
+  transform: translateY(0);
+}
+
+.hero__join-btn-main {
+  font-family: var(--font-display);
+  font-size: clamp(1rem, 2vw, 1.25rem);
+  font-weight: 800;
+  letter-spacing: 0.08em;
+}
+
+.hero__join-btn-sub {
+  margin-top: 0.3rem;
+
+  font-family: var(--font-mono);
+  font-size: 0.55rem;
+  font-weight: 700;
+  letter-spacing: 0.18em;
+
+  color: var(--gold-300);
+}
+
+@media (max-width: 560px) {
+  .hero__join-btn {
+    min-width: 220px;
+    padding: 0.9rem 1.5rem;
+  }
+
+  .hero__join-btn-main {
+    font-size: 0.95rem;
+  }
+
+  .hero__join-btn-sub {
+    font-size: 0.48rem;
+  }
+}
