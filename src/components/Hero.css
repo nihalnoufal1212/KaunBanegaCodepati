@@ -552,11 +552,7 @@
   }
 }
 
-@media (max-width: 560px) {
-  .hero__column--right {
-    transform: translateX(35px);
-  }
-}
+
   .hero__cta {
     margin-top: 0.4rem;
   }
