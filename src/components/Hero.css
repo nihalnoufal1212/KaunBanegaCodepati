@@ -637,3 +637,8 @@
     transition: none;
   }
 }
+@media (max-width: 560px) {
+  .hero__emblem-wrap {
+    transform: translateX(12px);
+  }
+}
