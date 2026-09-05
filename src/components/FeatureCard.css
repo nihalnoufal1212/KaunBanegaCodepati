@@ -85,10 +85,7 @@
 /* MOBILE: align right-side icons */
 @media (max-width: 560px) {
   .feature-card--right {
-    width: 100%;
-    max-width: 100%;
-    justify-content: flex-end;
-    margin-left: 0;
+   
     padding-right: 20px;;
   }
 }
