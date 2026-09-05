@@ -1,16 +1,16 @@
 /* ============================================================
    KAUN BANEGA CODEPATHI — HERO
-   Purple + Gold Edition
+   Main hero section styling
    ============================================================ */
 
 .hero {
   position: relative;
-  padding: clamp(2.5rem, 5vw, 4.5rem) 0 clamp(2.5rem, 5vw, 4rem);
+  padding: clamp(2.5rem, 6vw, 5rem) 0 clamp(2rem, 5vw, 3rem);
   overflow: hidden;
 }
 
 /* ============================================================
-   HERO ATMOSPHERE
+   HERO BACKGROUND RINGS
    ============================================================ */
 
 .hero__rings {
@@ -26,8 +26,7 @@
 .hero__ring {
   position: absolute;
   border-radius: 50%;
-  border: 1px solid rgba(154, 92, 255, 0.16);
-  transform-origin: center;
+  border: 1px solid rgba(99, 184, 255, 0.14);
 }
 
 .hero__ring--1 {
@@ -39,36 +38,42 @@
 .hero__ring--2 {
   width: 820px;
   height: 820px;
-  border-color: rgba(217, 173, 75, 0.11);
+  border-color: rgba(217, 173, 75, 0.1);
   animation: spin-slow 90s linear infinite reverse;
 }
 
 .hero__ring--3 {
   width: 1020px;
   height: 1020px;
-  border-color: rgba(154, 92, 255, 0.08);
+  border-color: rgba(99, 184, 255, 0.07);
   animation: spin-slow 130s linear infinite;
 }
 
-/* Central atmospheric glow */
+/* ============================================================
+   HERO SPOTLIGHT
+   ============================================================ */
 
 .hero__spotlight {
   position: absolute;
-  width: 850px;
-  height: 600px;
+  width: 900px;
+  height: 500px;
 
   background:
     radial-gradient(
       ellipse at center,
-      rgba(150, 82, 255, 0.20) 0%,
-      rgba(217, 173, 75, 0.08) 35%,
-      rgba(60, 30, 130, 0.08) 55%,
+      rgba(240, 195, 90, 0.16) 0%,
+      rgba(63, 143, 224, 0.08) 45%,
       transparent 75%
     );
 
-  filter: blur(18px);
+  filter: blur(10px);
+
   animation: pulse-glow 6s ease-in-out infinite;
 }
+
+/* ============================================================
+   HERO ANIMATIONS
+   ============================================================ */
 
 @keyframes spin-slow {
   from {
@@ -83,18 +88,18 @@
 @keyframes pulse-glow {
   0%,
   100% {
-    opacity: 0.65;
+    opacity: 0.7;
     transform: scale(1);
   }
 
   50% {
     opacity: 1;
-    transform: scale(1.07);
+    transform: scale(1.06);
   }
 }
 
 /* ============================================================
-   MAIN HERO GRID
+   HERO GRID
    ============================================================ */
 
 .hero__grid {
@@ -102,59 +107,22 @@
   z-index: 1;
 
   display: grid;
-  grid-template-columns: minmax(0, 1fr) auto minmax(0, 1fr);
+  grid-template-columns: 1fr auto 1fr;
 
   align-items: center;
 
-  gap: clamp(2rem, 4vw, 4.5rem);
+  gap: clamp(1.5rem, 3vw, 3rem);
 }
 
 /* ============================================================
-   SIDE FEATURE COLUMNS
+   FEATURE COLUMNS
    ============================================================ */
 
 .hero__column {
-  position: relative;
-
   display: flex;
   flex-direction: column;
 
-  gap: clamp(1.3rem, 2.5vw, 2rem);
-}
-
-/*
-   Subtle visual connection from the side cards
-   toward the central logo.
-*/
-
-.hero__column--left::after,
-.hero__column--right::after {
-  content: "";
-
-  position: absolute;
-  top: 50%;
-
-  width: 120px;
-  height: 1px;
-
-  background: linear-gradient(
-    90deg,
-    transparent,
-    rgba(154, 92, 255, 0.35),
-    rgba(217, 173, 75, 0.25)
-  );
-
-  opacity: 0.65;
-  pointer-events: none;
-}
-
-.hero__column--left::after {
-  right: -100px;
-}
-
-.hero__column--right::after {
-  left: -100px;
-  transform: rotate(180deg);
+  gap: clamp(1.4rem, 3vw, 2.4rem);
 }
 
 /* ============================================================
@@ -168,21 +136,19 @@
   flex-direction: column;
   align-items: center;
 
-  gap: 1.35rem;
+  gap: 1.4rem;
 
   text-align: center;
-
-  min-width: 0;
 }
 
 /* ============================================================
-   MAIN CODEPATHI LOGO
+   MAIN LOGO / EMBLEM
    ============================================================ */
 
 .hero__emblem-wrap {
   position: relative;
 
-  width: min(70vw, 560px);
+  width: min(65vw, 540px);
 
   display: flex;
   align-items: center;
@@ -192,7 +158,8 @@
 }
 
 /*
-   Purple atmospheric glow behind the logo.
+   Decorative glow behind the logo.
+   This gives the emblem a more premium poster-like presence.
 */
 
 .hero__emblem-wrap::before {
@@ -200,73 +167,77 @@
 
   position: absolute;
 
-  width: 72%;
-  height: 72%;
-
-  left: 50%;
-  top: 50%;
-
-  transform: translate(-50%, -50%);
+  width: 82%;
+  aspect-ratio: 1;
 
   border-radius: 50%;
 
   background:
     radial-gradient(
       circle,
-      rgba(156, 87, 255, 0.28) 0%,
-      rgba(156, 87, 255, 0.12) 38%,
-      transparent 72%
+      rgba(240, 195, 90, 0.18) 0%,
+      rgba(157, 92, 255, 0.16) 32%,
+      rgba(99, 184, 255, 0.08) 52%,
+      transparent 74%
     );
 
-  filter: blur(25px);
+  filter: blur(22px);
 
   z-index: -1;
 
-  animation: emblem-aura 5s ease-in-out infinite;
+  animation: emblem-halo 5s ease-in-out infinite;
 }
 
 /*
-   The actual logo.
-
-   IMPORTANT:
-   Your JSX does not need another class.
-   This targets the image inside the emblem wrapper.
+   Subtle rotating halo.
 */
 
-.hero__emblem-wrap img {
-  position: relative;
+.hero__emblem-wrap::after {
+  content: "";
 
+  position: absolute;
+
+  width: 94%;
+  aspect-ratio: 1;
+
+  border-radius: 50%;
+
+  border: 1px solid rgba(157, 92, 255, 0.12);
+
+  border-top-color: rgba(240, 195, 90, 0.42);
+  border-right-color: rgba(157, 92, 255, 0.32);
+  border-bottom-color: rgba(99, 184, 255, 0.12);
+
+  z-index: -1;
+
+  animation: emblem-orbit 18s linear infinite;
+}
+
+/* ============================================================
+   ACTUAL LOGO IMAGE
+   ============================================================ */
+
+.hero__emblem {
   width: 100%;
   height: auto;
 
-  object-fit: contain;
+  display: block;
 
   filter:
-    drop-shadow(0 0 12px rgba(154, 92, 255, 0.45))
-    drop-shadow(0 0 30px rgba(154, 92, 255, 0.25))
-    drop-shadow(0 0 45px rgba(217, 173, 75, 0.14));
+    drop-shadow(0 0 28px rgba(240, 195, 90, 0.32))
+    drop-shadow(0 0 55px rgba(157, 92, 255, 0.28))
+    drop-shadow(0 0 85px rgba(99, 184, 255, 0.16));
 
-  animation: emblem-float 6s ease-in-out infinite;
+  animation:
+    emblem-float 7s ease-in-out infinite,
+    emblem-glow 5s ease-in-out infinite;
 
-  transform-origin: center;
-
-  transition:
-    transform 0.35s ease,
-    filter 0.35s ease;
+  transform-origin: center center;
 }
 
-/*
-   Slight hover interaction.
-*/
-
-.hero__emblem-wrap:hover img {
-  transform: scale(1.025);
-
-  filter:
-    drop-shadow(0 0 16px rgba(154, 92, 255, 0.65))
-    drop-shadow(0 0 38px rgba(154, 92, 255, 0.35))
-    drop-shadow(0 0 55px rgba(217, 173, 75, 0.2));
-}
+/* ============================================================
+   LOGO ANIMATIONS
+   ============================================================ */
 
 @keyframes emblem-float {
   0%,
@@ -275,105 +246,104 @@
   }
 
   50% {
-    transform: translateY(-9px);
+    transform: translateY(-10px);
   }
 }
 
-@keyframes emblem-aura {
+@keyframes emblem-glow {
   0%,
   100% {
-    opacity: 0.65;
-    transform: translate(-50%, -50%) scale(0.95);
+    filter:
+      drop-shadow(0 0 28px rgba(240, 195, 90, 0.32))
+      drop-shadow(0 0 55px rgba(157, 92, 255, 0.28))
+      drop-shadow(0 0 85px rgba(99, 184, 255, 0.16));
+  }
+
+  50% {
+    filter:
+      drop-shadow(0 0 38px rgba(240, 195, 90, 0.45))
+      drop-shadow(0 0 70px rgba(157, 92, 255, 0.40))
+      drop-shadow(0 0 100px rgba(99, 184, 255, 0.22));
+  }
+}
+
+@keyframes emblem-halo {
+  0%,
+  100% {
+    opacity: 0.55;
+    transform: scale(0.92);
   }
 
   50% {
     opacity: 1;
-    transform: translate(-50%, -50%) scale(1.08);
+    transform: scale(1.08);
+  }
+}
+
+@keyframes emblem-orbit {
+  from {
+    transform: rotate(0deg);
+  }
+
+  to {
+    transform: rotate(360deg);
   }
 }
 
 /* ============================================================
-   MAIN JOIN QUIZ BUTTON
+   TAGLINE
    ============================================================ */
 
-.hero__cta-wrap {
-  position: relative;
-
-  display: flex;
-  justify-content: center;
-  align-items: center;
-
-  margin-top: 0.25rem;
+.hero__tagline {
+  font-size: 0.8rem;
 }
 
-/* Small glow behind CTA */
+/* ============================================================
+   HERO CTA — OLD SHARED VERSION
+   Kept so existing code does not break.
+   ============================================================ */
 
-.hero__cta-wrap::before {
-  content: "";
-
-  position: absolute;
-
-  width: 180px;
-  height: 60px;
-
-  border-radius: 999px;
-
-  background: rgba(154, 92, 255, 0.18);
-
-  filter: blur(22px);
-
-  opacity: 0.7;
-
-  pointer-events: none;
-}
-
-.hero__join-btn {
+.hero__cta {
   position: relative;
-  z-index: 1;
 
-  display: flex;
-  flex-direction: column;
+  min-width: 230px;
 
-  align-items: center;
-  justify-content: center;
+  padding: 0.85rem 1.5rem;
 
-  min-width: 260px;
-
-  padding: 1rem 2.2rem;
-
-  border: 1px solid rgba(217, 173, 75, 0.75);
-
-  border-radius: 999px;
-
-  background:
-    linear-gradient(
-      135deg,
-      rgba(108, 54, 180, 0.35),
-      rgba(35, 20, 70, 0.92)
-    );
-
-  color: #fff4d6;
-
-  box-shadow:
-    0 8px 30px rgba(0, 0, 0, 0.35),
-    0 0 24px rgba(154, 92, 255, 0.18),
-    inset 0 0 18px rgba(217, 173, 75, 0.05);
-
-  backdrop-filter: blur(10px);
-
-  cursor: pointer;
+  margin-top: 0.2rem;
 
   overflow: hidden;
-
-  transition:
-    transform 0.25s ease,
-    box-shadow 0.25s ease,
-    border-color 0.25s ease;
 }
 
-/* Moving shine */
+.hero__cta-main {
+  display: block;
 
-.hero__join-btn::before {
+  font-family: var(--font-display);
+
+  font-size: 0.95rem;
+
+  font-weight: 800;
+
+  letter-spacing: 0.08em;
+}
+
+.hero__cta-sub {
+  display: block;
+
+  margin-top: 0.25rem;
+
+  color: var(--ink-300);
+
+  font-family: var(--font-body);
+
+  font-size: 0.58rem;
+
+  font-weight: 600;
+
+  letter-spacing: 0.1em;
+}
+
+.hero__cta::before {
   content: "";
 
   position: absolute;
@@ -383,40 +353,141 @@
   background:
     linear-gradient(
       110deg,
-      transparent 25%,
-      rgba(255, 255, 255, 0.13) 50%,
-      transparent 75%
+      transparent 20%,
+      rgba(255, 255, 255, 0.12) 50%,
+      transparent 80%
     );
 
   transform: translateX(-120%);
 
-  transition: transform 0.75s ease;
+  transition: transform 0.7s ease;
+}
 
-  pointer-events: none;
+.hero__cta:hover::before {
+  transform: translateX(120%);
+}
+
+/* ============================================================
+   HERO PRIMARY JOIN QUIZ CTA
+   ============================================================ */
+
+.hero__cta-wrap {
+  display: flex;
+
+  justify-content: center;
+
+  margin-top: 0.2rem;
+}
+
+.hero__join-btn {
+  position: relative;
+
+  display: flex;
+
+  flex-direction: column;
+
+  align-items: center;
+
+  justify-content: center;
+
+  min-width: 250px;
+
+  padding: 1rem 2rem;
+
+  border: 1px solid var(--gold-300);
+
+  border-radius: 999px;
+
+  background:
+    linear-gradient(
+      180deg,
+      rgba(255, 244, 214, 0.16),
+      rgba(80, 60, 15, 0.82)
+    );
+
+  color: var(--gold-100);
+
+  box-shadow:
+    0 8px 30px rgba(0, 0, 0, 0.3),
+    0 0 28px -8px var(--gold-glow);
+
+  backdrop-filter: blur(8px);
+
+  cursor: pointer;
+
+  overflow: hidden;
+
+  transition:
+    transform var(--dur-fast) var(--ease-out),
+    box-shadow var(--dur-fast) var(--ease-out),
+    background var(--dur-fast) var(--ease-out);
+}
+
+/* ============================================================
+   JOIN BUTTON SHINE
+   ============================================================ */
+
+.hero__join-btn::before {
+  content: "";
+
+  position: absolute;
+
+  top: 0;
+  bottom: 0;
+
+  left: -120%;
+
+  width: 55%;
+
+  background:
+    linear-gradient(
+      110deg,
+      transparent,
+      rgba(255, 255, 255, 0.18),
+      transparent
+    );
+
+  transform: skewX(-20deg);
+
+  transition: left 0.8s ease;
 }
 
 .hero__join-btn:hover::before {
-  transform: translateX(120%);
+  left: 140%;
 }
+
+/* ============================================================
+   JOIN BUTTON HOVER
+   ============================================================ */
 
 .hero__join-btn:hover,
 .hero__join-btn:focus-visible {
   transform: translateY(-3px);
 
-  border-color: rgba(217, 173, 75, 1);
-
   box-shadow:
-    0 14px 40px rgba(0, 0, 0, 0.4),
-    0 0 35px rgba(154, 92, 255, 0.3),
-    0 0 15px rgba(217, 173, 75, 0.12),
-    inset 0 0 22px rgba(217, 173, 75, 0.08);
+    0 12px 40px rgba(0, 0, 0, 0.35),
+    0 0 38px -6px var(--gold-glow);
+
+  background:
+    linear-gradient(
+      180deg,
+      rgba(255, 244, 214, 0.22),
+      rgba(90, 68, 18, 0.95)
+    );
 }
 
 .hero__join-btn:active {
   transform: translateY(0);
 }
 
+/* ============================================================
+   JOIN BUTTON TEXT
+   ============================================================ */
+
 .hero__join-btn-main {
+  position: relative;
+  z-index: 1;
+
   font-family: var(--font-display);
 
   font-size: clamp(1rem, 2vw, 1.25rem);
@@ -427,6 +498,9 @@
 }
 
 .hero__join-btn-sub {
+  position: relative;
+  z-index: 1;
+
   margin-top: 0.3rem;
 
   font-family: var(--font-mono);
@@ -437,68 +511,16 @@
 
   letter-spacing: 0.18em;
 
-  color: rgba(217, 173, 75, 0.9);
+  color: var(--gold-300);
 }
 
 /* ============================================================
-   TAGLINE
-   ============================================================ */
-
-.hero__tagline {
-  font-size: 0.8rem;
-
-  opacity: 0.75;
-
-  letter-spacing: 0.22em;
-
-  text-shadow:
-    0 0 12px rgba(154, 92, 255, 0.18);
-}
-
-/* ============================================================
-   TABLET
-   ============================================================ */
-
-@media (max-width: 1100px) {
-  .hero__grid {
-    gap: 1.5rem;
-  }
-
-  .hero__emblem-wrap {
-    width: min(55vw, 480px);
-  }
-
-  .hero__column--left::after,
-  .hero__column--right::after {
-    width: 70px;
-  }
-
-  .hero__column--left::after {
-    right: -55px;
-  }
-
-  .hero__column--right::after {
-    left: -55px;
-  }
-}
-
-/* ============================================================
-   MOBILE / TABLET STACK
+   TABLET / MOBILE
    ============================================================ */
 
 @media (max-width: 980px) {
-  .hero {
-    padding-top: 2.5rem;
-  }
-
   .hero__grid {
     grid-template-columns: 1fr;
-
-    gap: 2.5rem;
-  }
-
-  .hero__centerpiece {
-    order: 1;
   }
 
   .hero__column {
@@ -521,22 +543,18 @@
     order: 3;
   }
 
-  /*
-     Hide horizontal connectors when stacked.
-  */
-
-  .hero__column--left::after,
-  .hero__column--right::after {
-    display: none;
+  .hero__centerpiece {
+    order: 1;
   }
 
   .feature-card {
     max-width: 340px;
+
     width: 100%;
   }
 
-  .hero__emblem-wrap {
-    width: min(78vw, 520px);
+  .hero__cta {
+    margin-top: 0.4rem;
   }
 }
 
@@ -546,25 +564,17 @@
 
 @media (max-width: 560px) {
   .hero {
-    padding:
-      1.8rem 0
-      2.5rem;
-  }
-
-  .hero__grid {
-    gap: 2rem;
+    padding-top: 2rem;
   }
 
   .hero__emblem-wrap {
-    width: min(88vw, 420px);
+    width: min(88vw, 430px);
   }
 
   .hero__join-btn {
     min-width: 220px;
 
-    padding:
-      0.9rem
-      1.5rem;
+    padding: 0.9rem 1.5rem;
   }
 
   .hero__join-btn-main {
@@ -575,25 +585,37 @@
     font-size: 0.48rem;
   }
 
-  .hero__tagline {
-    font-size: 0.65rem;
+  .hero__cta {
+    min-width: 210px;
 
-    letter-spacing: 0.14em;
+    padding: 0.8rem 1.2rem;
   }
 
+  .hero__cta-main {
+    font-size: 0.82rem;
+  }
+
+  .hero__cta-sub {
+    font-size: 0.52rem;
+  }
+
+  /*
+     Reduce oversized decorative rings on small screens.
+  */
+
   .hero__ring--1 {
-    width: 420px;
-    height: 420px;
+    width: 430px;
+    height: 430px;
   }
 
   .hero__ring--2 {
-    width: 560px;
-    height: 560px;
+    width: 580px;
+    height: 580px;
   }
 
   .hero__ring--3 {
-    width: 700px;
-    height: 700px;
+    width: 720px;
+    height: 720px;
   }
 }
 
@@ -604,11 +626,13 @@
 @media (prefers-reduced-motion: reduce) {
   .hero__ring,
   .hero__spotlight,
+  .hero__emblem,
   .hero__emblem-wrap::before,
-  .hero__emblem-wrap img {
+  .hero__emblem-wrap::after {
     animation: none;
   }
 
+  .hero__cta::before,
   .hero__join-btn::before {
     transition: none;
   }

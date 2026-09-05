@@ -66,10 +66,12 @@ export default function Hero() {
         {/* CENTER */}
         <div className="hero__centerpiece">
           <div className="hero__emblem-wrap">
-            <img
-  src="/kbc-codepathi.png"
-  alt="Kaun Banega CodePathi logo"
-/>
+  <img
+    src="/kbc-codepathi.png"
+    alt="Kaun Banega CodePathi logo"
+    className="hero__emblem"
+  />
+
           </div>
 
           {/* MAIN JOIN QUIZ BUTTON */}
