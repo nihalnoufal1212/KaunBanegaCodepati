@@ -638,7 +638,7 @@
   }
 }
 @media (max-width: 560px) {
-  .hero__emblem-wrap {
-    transform: translateX(12px);
+  .hero__column--right {
+    transform: translateX(28px);
   }
 }
