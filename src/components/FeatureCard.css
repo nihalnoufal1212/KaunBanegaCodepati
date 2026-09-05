@@ -133,3 +133,9 @@
   }
 
 }
+/* MOBILE: move right-side feature group slightly inward */
+@media (max-width: 560px) {
+  .feature-card--right {
+    transform: translateX(-28px);
+  }
+}
