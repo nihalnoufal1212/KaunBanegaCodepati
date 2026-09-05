@@ -639,6 +639,7 @@
 }
 @media (max-width: 560px) {
   .hero__column--right {
-    transform: translateX(28px);
+    transform: translateX(20px);
+    padding-right: 20px;
   }
 }
