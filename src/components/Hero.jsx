@@ -9,7 +9,6 @@ import {
   CrownIcon,
   TargetIcon,
 } from "./Icons";
-import emblem from "../assets/codepathi-emblem.webp";
 
 const LEFT_FEATURES = [
   { icon: <BoltIcon />, title: "THINK FAST", subtitle: "Act Smart" },
@@ -68,10 +67,9 @@ export default function Hero() {
         <div className="hero__centerpiece">
           <div className="hero__emblem-wrap">
             <img
-              src={emblem}
-              alt="Kaun Banega Codepathi emblem — a gold and navy circular quiz badge"
-              className="hero__emblem"
-            />
+  src="/kbc-codepathi.png"
+  alt="Kaun Banega CodePathi logo"
+/>
           </div>
 
           {/* MAIN JOIN QUIZ BUTTON */}
