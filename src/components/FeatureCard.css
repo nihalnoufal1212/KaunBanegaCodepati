@@ -20,14 +20,24 @@
   align-items: center;
   justify-content: center;
   border: var(--border-gold-strong);
-  background: radial-gradient(circle at 40% 30%, rgba(240, 195, 90, 0.18), rgba(10, 19, 48, 0.6));
-  box-shadow: 0 0 22px -4px var(--gold-glow), inset 0 0 12px rgba(240, 195, 90, 0.15);
+  background: radial-gradient(
+    circle at 40% 30%,
+    rgba(240, 195, 90, 0.18),
+    rgba(10, 19, 48, 0.6)
+  );
+  box-shadow:
+    0 0 22px -4px var(--gold-glow),
+    inset 0 0 12px rgba(240, 195, 90, 0.15);
   color: var(--gold-300);
-  transition: box-shadow var(--dur-fast) var(--ease-out), transform var(--dur-fast) var(--ease-out);
+  transition:
+    box-shadow var(--dur-fast) var(--ease-out),
+    transform var(--dur-fast) var(--ease-out);
 }
 
 .feature-card:hover .feature-card__icon {
-  box-shadow: 0 0 32px -2px var(--gold-glow), inset 0 0 16px rgba(240, 195, 90, 0.25);
+  box-shadow:
+    0 0 32px -2px var(--gold-glow),
+    inset 0 0 16px rgba(240, 195, 90, 0.25);
   transform: scale(1.05);
 }
 
@@ -40,11 +50,19 @@
   height: 1px;
   width: 26px;
   flex-shrink: 0;
-  background: linear-gradient(90deg, var(--gold-500), transparent);
+  background: linear-gradient(
+    90deg,
+    var(--gold-500),
+    transparent
+  );
 }
 
 .feature-card--right .feature-card__connector {
-  background: linear-gradient(270deg, var(--gold-500), transparent);
+  background: linear-gradient(
+    270deg,
+    var(--gold-500),
+    transparent
+  );
   order: 2;
 }
 
@@ -64,7 +82,13 @@
   color: var(--ink-300);
 }
 
+
+/* =========================================================
+   TABLET / MOBILE
+   ========================================================= */
+
 @media (max-width: 980px) {
+
   .feature-card,
   .feature-card--right {
     max-width: 100%;
@@ -75,17 +99,37 @@
 
   .feature-card--right .feature-card__connector {
     order: 0;
-    background: linear-gradient(90deg, var(--gold-500), transparent);
+    background: linear-gradient(
+      90deg,
+      var(--gold-500),
+      transparent
+    );
   }
 
   .feature-card--right .feature-card__text {
     order: 0;
   }
+
 }
-/* MOBILE: align right-side icons */
+
+
+/* =========================================================
+   MOBILE — ALIGN RIGHT-SIDE FEATURES
+   ========================================================= */
+
 @media (max-width: 560px) {
+
   .feature-card--right {
-   
-    padding-right: 20px;;
+    width: 100%;
+    max-width: 100%;
+    justify-content: flex-end;
+    margin-left: 0;
+    padding-right: 20px;
   }
+
+  .feature-card--right .feature-card__text {
+    width: 280px;
+    text-align: left;
+  }
+
 }
